@@ -39,14 +39,14 @@ const Principal =(props) => {
     const agregarCampo=()=>{
       console.log("mas", props.campoForm)
       let array=props.campoForm
-      /*array.push({
+      array.push({
         tipoCampo:"text",
         propCampo:"",
         opcionCampo:"Opcional",
         limiteCampo:"50",
         labelCampo:"-",
-      })*/
-      array.push({})
+      })
+      //array.push({})
       props.setCampo(array)
       toggle()
     }
