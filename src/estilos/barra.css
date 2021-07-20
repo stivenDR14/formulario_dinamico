@@ -1,0 +1,13 @@
+
+
+.NavbarLayout {
+  width: 100%;
+  height: 10%;
+  background-color: var(--color_primario);
+  background: linear-gradient(to right,  var(--color_primario), var(--color_secundario));
+  font-size: calc(10px + 4vmin);
+  padding-bottom: 10px;
+  border-bottom: 10px solid var(--color_auxiliar);
+  border-radius: 50px 20px;
+
+}
