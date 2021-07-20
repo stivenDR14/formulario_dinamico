@@ -1,4 +1,4 @@
-import '../estilos/formulario.scss';
+import '../estilos/formulario.css';
 import React, {useState} from 'react';
 import { Container, Row, Col, Card, Label, Input, Button, ButtonGroup } from 'reactstrap';
 import {setCampo} from '../actions/index';

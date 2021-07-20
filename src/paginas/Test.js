@@ -1,6 +1,6 @@
-import React, {useEffect} from 'react';
-import { Container, Row, Col, Button } from 'reactstrap';
-import '../estilos/formulario.scss';
+import React, {useState, useEffect} from 'react';
+import { Container, Row, Col, Button,  Modal, ModalHeader, ModalBody, ModalFooter  } from 'reactstrap';
+import '../estilos/formulario.css';
 import {connect} from 'react-redux';
 import { AvField, AvForm, FormGroup} from 'availity-reactstrap-validation';
 
@@ -10,9 +10,12 @@ function Test(props) {
     console.log("lo que proviene:",props.campoForm)
     
 },[])
+  const [modal, setModal] = useState(false);
 
+  const toggle = () => setModal(!modal);
   const handleSubmit = (event, erroresAvField, valoresAvField)=> {
     console.log("validando",erroresAvField, valoresAvField)
+    if(erroresAvField.length==0)toggle()
     
   }
 
@@ -44,6 +47,15 @@ function Test(props) {
               </Row>
               </AvForm>
         </Container>
+        <Modal isOpen={modal} toggle={toggle}>
+        <ModalHeader toggle={toggle}>Aviso</ModalHeader>
+        <ModalBody>
+          Las entradas son acordes a las especificaciones, ¡Bien hecho!. Creado por: <a href="https://bifrost-apps.com">Edgar Stiven Díaz Roa</a>
+        </ModalBody>
+        <ModalFooter>
+          <Button color="warning" onClick={toggle}>Continuar</Button>
+        </ModalFooter>
+      </Modal>
     
     </div>
   );
